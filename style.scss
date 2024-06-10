@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Shrikhand&display=swap');
+$box-shadow: 2px 1px 8px -3px #000000;
+$zoom: scale(1.02);
+
+*,
+::before,
+::after{
+box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: "Roboto";
+}
+
+header {
+    position: relative;
+    top: 0px;
+    font-family: shrikhand;
+    text-align: center;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 /25%);
+    padding: 0.3rem;
+    margin:0px;
+
+}
+
+ .city {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color:#EAEAEA;
+    text-align: center;
+    padding: 0.5rem;
+    & i {
+    font-size: 1.5rem;
+}
+}
+    
+
+
+/* explorer */
+
+.Explorer{
+    text-align: center;
+& h2 {
+    margin-top: 2rem;
+}
+& button {
+ color: white;
+font-weight: 300;
+font-size: 1.5rem;
+padding: 1rem 2rem;
+border: none;
+border-radius: 2rem;
+box-shadow: $box-shadow;
+background: linear-gradient(#9356DC, #FF79DA);
+transition: 200ms;
+margin-top: 1rem;
+
+} 
+
+& button:hover {
+    //transform: scale(1.02);
+    transform: $zoom;
+    opacity: 0.9;
+}
+
+
+}
+.tuto {
+    & ol{ 
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        @media (max-width: 800px ) {
+            flex-direction: column;   
+        }
+    }
+    & li { 
+        position: relative;
+        &::before {
+            content: counter(steps);
+            counter-increment: steps;
+            color: white;
+            background-color: #9356DC;
+            width: 2rem;
+            height: 2rem;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 1rem;
+            left: -1rem;
+        }
+        list-style-type: none;
+        background-color: #f6f6f6;
+        padding: 1.5rem 2rem;
+        flex-grow: 1;
+        border-radius: 1rem;
+        box-shadow: $box-shadow;
+        &:hover{
+            transform: $zoom;
+
+        }
+    & i.fas {
+        color: #7e7e7e;
+        margin-right: 1rem;
+
+    }
+
+    }
+}
